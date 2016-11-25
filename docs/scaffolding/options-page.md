@@ -73,7 +73,9 @@ Besides the view a kind of controller will be generated in
 "includes/admin/options-pages/class-my-config.php".
 It is accessible via `$this` within the view (see above)
 or you load the class
-`\My_Plugin\Admin\Options_Pages\My_Config` in some other way.
+`\My_Plugin\Admin\Options_Pages\My_Config`
+(which is `{Plugin_Slug}\Admin\Options_Pages\{Group_Id}`)
+in some other way.
 
 ### Registering the options page
 
