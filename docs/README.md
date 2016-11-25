@@ -1,32 +1,6 @@
-# Plugins
+# Generating code with wp-make
 
-## Structure
-
-The major directories looks like this (within the plugin folder):
-
-- admin/
-- includes/
-- public/
-
-The **admin** folder is given for templates that will be shown in the backend.
-Those are usually used by classes within the `\Plugin_Slug\Admin` scope.
-For example an options page
-(like `\Plugin_Slug\Admin\Options_Pages\Foo`)
-will use the "admin/options-pages/foo.php" template.
-
-The **includes** folder contains all classes
-and most of the functionality.
-It can be considered as the section for controller
-and models, if you like.
-
-All **public** data are in one folder.
-Others will be protected by an `.htaccess`
-and sometimes `index.php` file.
-Remember that this only provides some protection on apache servers.
-
-## Using wp-make from CLI
-
-### Standalone
+## Standalone
 
 This command can be used by typing `wp-make`
 (if installed globally)
