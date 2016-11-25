@@ -10,6 +10,23 @@ Creating options groups can be done via
 
     wp-make optinos-page [plugin|theme] [group-id]
 
+There are a few options to enhance generation even more:
+
+- `--namespace` prefix will be put in front of every
+  class name.
+  By default it will turn the plugin or theme slug
+  into a upper-snake-case
+  (`some-plugin` becomes `Some_Plugin`).
+
+The **group id** can be set to anything you like.
+
+A **namespace** prefix can be provided
+(e.g. `--namespace="Acme_Foo"`).
+By default it will turn the plugin or theme slug
+into a upper-snake-case
+(`some-plugin` becomes `Some_Plugin`).
+
+
 It will create those files within the plugin:
 
 - admin/options-pages/
@@ -18,7 +35,6 @@ It will create those files within the plugin:
   - {namespace}/admin/options-pages/class-{group-id}.php
   - options-{group-id}.php
 
-The **group id** can be set to anything you like.
 If those files already exists within the repository
 then they are updated.
 
