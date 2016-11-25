@@ -12,16 +12,16 @@ class CreateHandler
     /**
      * @var FileRepositoryInterface
      */
-    protected $filesRepository;
+    protected $optionsPagesRepository;
 
-    public function __construct(OptionsPagesRepository $templateRepository)
+    public function __construct(OptionsPagesRepository $optionsPagesRepository)
     {
-        $this->filesRepository = $templateRepository;
+        $this->optionsPagesRepository = $optionsPagesRepository;
     }
 
     public function handle(CreateCommand $optionsPage)
     {
-        $this->filesRepository->createGroupTemplate(
+        $this->optionsPagesRepository->createGroupTemplate(
             $optionsPage->getPlugin(),
             $optionsPage->getOptionsGroup()
         );
