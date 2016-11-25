@@ -35,6 +35,34 @@ class OptionsPagesRepository
         return 'admin/options-pages/'.$id;
     }
 
+    public function createGroupClass(Plugin $plugin, OptionsGroup $optionsGroup)
+    {
+        $targetPath = $plugin->getPath().DIRECTORY_SEPARATOR.$this->getClassPath($optionsGroup->getId());
+
+        $content = $this->twig->render(
+            $this->getClassPath().'new.twig',
+            [
+                'optionsGroup' => $optionsGroup,
+                'plugin' => $plugin,
+            ]
+        );
+
+        if (!is_dir(dirname($targetPath))) {
+            mkdir(dirname($targetPath), 0775, true);
+        }
+
+        file_put_contents($targetPath, $content);
+    }
+
+    public function getClassPath($id = null)
+    {
+        if (null !== $id) {
+            $id = 'class-'.$id;
+        }
+
+        return '/includes/'.$this->getTemplatePath($id);
+    }
+
     public function createGroupTemplate(Plugin $plugin, OptionsGroup $optionsGroup)
     {
         $targetPath = $plugin->getPath().DIRECTORY_SEPARATOR.$this->getTemplatePath($optionsGroup->getId());
