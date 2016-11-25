@@ -28,7 +28,7 @@ class OptionsGroup
         $this->id = $id;
 
         if (null == $label) {
-            $label = $id . ' options';
+            $label = ucfirst(preg_replace('@[^A-Za-z0-9]@', ' ', $id));
         }
 
         $this->label = $label;
