@@ -37,7 +37,7 @@ The general concept is:
 
 The **command** is a must have.
 Without it won't make any sense.
-Read more about the commands in the "Scaffolding"
+Read more about the commands in the ["Scaffolding"](scaffolding.md)
 section.
 
 You can even skip the **plugin slug** when you are working
