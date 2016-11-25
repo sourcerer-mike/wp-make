@@ -21,12 +21,12 @@ class OptionsPagesRepository
 
     public function getGroupTemplate(Plugin $plugin, $id)
     {
-        $path = $plugin->getPath().$this->getBasePath($id);
+        $path = $plugin->getPath().$this->getTemplatePath($id);
 
         return file_get_contents($path);
     }
 
-    protected function getBasePath($id = null)
+    protected function getTemplatePath($id = null)
     {
         if (null !== $id) {
             $id .= '.php';
@@ -37,10 +37,10 @@ class OptionsPagesRepository
 
     public function createGroupTemplate(Plugin $plugin, OptionsGroup $optionsGroup)
     {
-        $targetPath = $plugin->getPath().DIRECTORY_SEPARATOR.$this->getBasePath($optionsGroup->getId());
+        $targetPath = $plugin->getPath().DIRECTORY_SEPARATOR.$this->getTemplatePath($optionsGroup->getId());
 
         $content = $this->twig->render(
-            $this->getBasePath().'new.twig',
+            $this->getTemplatePath().'new.twig',
             [
                 'optionsGroup' => $optionsGroup,
                 'plugin' => $plugin,
@@ -52,10 +52,5 @@ class OptionsPagesRepository
         }
 
         file_put_contents($targetPath, $content);
-    }
-
-    public function getTemplatePath($templateFile)
-    {
-        return WPDEV_TEMPLATE_PATH.$templateFile.'.twig';
     }
 }
