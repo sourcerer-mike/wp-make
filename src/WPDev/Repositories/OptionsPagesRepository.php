@@ -37,7 +37,9 @@ class OptionsPagesRepository
 
     public function createGroupClass(Plugin $plugin, OptionsGroup $optionsGroup)
     {
-        $targetPath = $plugin->getPath().DIRECTORY_SEPARATOR.$this->getClassPath($optionsGroup->getId());
+        $targetPath = $plugin->getClassPath(
+            $plugin->getNamespace().'\\Admin\\Options_Pages\\' . $optionsGroup->getId()
+        );
 
         $content = $this->twig->render(
             $this->getClassPath().'new.twig',

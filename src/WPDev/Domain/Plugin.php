@@ -101,7 +101,7 @@ class Plugin
         $className = strtolower($className);
         $className = str_replace('_', '-', $className);
 
-        return $className.'.php';
+        return dirname($className) . '/class-' . basename($className) . '.php';
     }
 
     /**
