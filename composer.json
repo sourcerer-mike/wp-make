@@ -1,0 +1,12 @@
+{
+  "name": "sourcerer-mike/wp-dev",
+  "autoload": {
+    "psr-4": {
+      "WPDev\\": "src/WPDev"
+    }
+  },
+  "require": {
+    "goaop/parser-reflection": "^1.1",
+    "twig/twig": "^1.12"
+  }
+}

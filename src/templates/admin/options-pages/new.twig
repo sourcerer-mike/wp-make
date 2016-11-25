@@ -1,0 +1,12 @@
+<?php /** @var \{{ plugin.namespace }}\Admin\Options_Page\{{ optionsGroup.id|upper_snake }} $this */ ?>
+<h1>{{ optionsGroup.label }}</h1>
+
+<form action='options.php' method='post'>
+
+    <?php
+	settings_fields( '{{ optionsGroup.id }}' );
+	do_settings_sections( '{{ optionsGroup.id }}' );
+	submit_button();
+	?>
+
+</form>
