@@ -4,11 +4,9 @@ Creating custom options panels in WordPress is relatively easy.
 Anyway this tool makes it even simpler
 and generates the code for you.
 
-## Generating option pages
+Usage:
 
-Creating options groups can be done via
-
-    wp-make optinos-page [plugin|theme] [group-id]
+    wp-make options-page [plugin|theme] [group-id]
 
 There are a few options to enhance generation even more:
 
@@ -37,6 +35,8 @@ It will create those files within the plugin:
 
 If those files already exists within the repository
 then they are updated.
+
+## Generating option pages
 
 The following sections
 and examples will explain what happens
