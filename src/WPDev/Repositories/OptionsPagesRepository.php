@@ -56,13 +56,33 @@ class OptionsPagesRepository
         file_put_contents($targetPath, $content);
     }
 
+    public function createGroupInclude(Plugin $plugin, OptionsGroup $optionsGroup)
+    {
+        $targetPath = $plugin->getIncludePath() . 'options-pages.php';
+        $twigFile = 'includes/options-pages.twig';
+
+        $content = $this->twig->render(
+            $twigFile,
+            [
+                'optionsGroup' => $optionsGroup,
+                'plugin' => $plugin,
+            ]
+        );
+
+        if (!is_dir(dirname($targetPath))) {
+            mkdir(dirname($targetPath), 0775, true);
+        }
+
+        file_put_contents($targetPath, $content);
+    }
+
     public function getClassPath($id = null)
     {
         if (null !== $id) {
             $id = 'class-'.$id;
         }
 
-        return '/includes/'.$this->getTemplatePath($id);
+        return '/includes/classes/'.$this->getTemplatePath($id);
     }
 
     public function createGroupTemplate(Plugin $plugin, OptionsGroup $optionsGroup)

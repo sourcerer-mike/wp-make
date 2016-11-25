@@ -111,4 +111,9 @@ class Plugin
     {
         return $this->path;
     }
+
+    public function getIncludePath()
+    {
+        return $this->getPath() . '/includes/';
+    }
 }

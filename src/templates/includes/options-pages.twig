@@ -1,0 +1,11 @@
+<?php
+/**
+ * Register the options page.
+ *
+ * @package {{ plugin.slug }}
+ */
+{% set variable = '$_' ~ (plugin.slug|lower_snake) ~ '_' ~ (optionsGroup.id|lower_snake) ~ '_options' %}
+{{ variable }} = new \{{ plugin.namespace }}\Admin\Options_Pages\{{ optionsGroup.id|upper_snake }}();
+
+add_action( 'admin_menu', array( {{ variable }}, 'add_options_page' ) );
+add_action( 'admin_init', array( {{ variable }}, 'register_setting' ) );

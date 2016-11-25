@@ -1,0 +1,33 @@
+<?php
+/**
+ * Options page "{{ optionsGroup.label }}".
+ *
+ * @package {{ plugin.slug }}
+ */
+
+namespace {{ plugin.slug|upper_snake }}\Admin\Options_Pages;
+
+class {{ optionsGroup.id|upper_snake }} {
+	/**
+	 * Add in WordPress settings.
+	 */
+	public function add_options_page() {
+		add_options_page(
+			__( '{{ optionsGroup.label }}', '{{ plugin.textdomain }}' ),
+			__( '{{ optionsGroup.label }}', '{{ plugin.textdomain }}' ),
+			'manage_options',
+			'{{ optionsGroup.id }}',
+			array( $this, 'dispatch' )
+		);
+	}
+
+	public function dispatch() {
+	    require_once get_{{ plugin.slug|lower_snake }}_path( 'admin/options-pages/{{ optionsGroup.id }}.php' );
+	}
+
+	/**
+	 * Register all settings.
+	 */
+	public function register_setting() {
+	}
+}

@@ -30,5 +30,10 @@ class CreateHandler
             $optionsPage->getPlugin(),
             $optionsPage->getOptionsGroup()
         );
+
+        $this->optionsPagesRepository->createGroupInclude(
+            $optionsPage->getPlugin(),
+            $optionsPage->getOptionsGroup()
+        );
     }
 }

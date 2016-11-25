@@ -25,6 +25,16 @@ $twig->addFilter(
     )
 );
 
+$twig->addFilter(
+    'lower_snake',
+    new \Twig_SimpleFilter(
+        'lower_snake',
+        function ($string) {
+            return strtolower(preg_replace('@[^A-Za-z]+@', '_', $string));
+        }
+    )
+);
+
 $handler = new \WPDev\Commands\OptionsPages\CreateHandler(
     new \WPDev\Repositories\OptionsPagesRepository($twig)
 );
