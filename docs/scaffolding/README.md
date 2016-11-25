@@ -13,7 +13,7 @@ So please contribute :)
 
 Everything that is created using `wp-make`
 aims to follow the WordPress Coding Standards.
-You might complain about some decisions in wording,
+You might like complain about some decisions in wording,
 naming,
 or structure.
 Feel free to leave an issue so that we can discuss this.
@@ -23,7 +23,7 @@ or other standards like VIP coding standards
 or best practices.
 
 In other words: Lean back, relax,
-and enjoy that this tool generates it
+and enjoy that this tool generates things
 just like WordPress wants it.
 So lets go!
 
