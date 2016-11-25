@@ -10,11 +10,15 @@ Usage:
 
 There are a few options to enhance generation even more:
 
+- `--label` to set a more readable heading (optional).
+  By default like the ID but with spaces.
+  (Warning: Not yet implemented!)
 - `--namespace` prefix will be put in front of every
   class name.
   By default it will turn the plugin or theme slug
   into a upper-snake-case
   (`some-plugin` becomes `Some_Plugin`).
+  (Warning: Not yet implemented!)
 
 The **group id** can be set to anything you like.
 
@@ -44,11 +48,7 @@ when this command is run:
 
     wp-make options-page my-plugin my-config
 
-There are additional options if you like:
 
-- `--label` to set a label.
-  Optional and by default like the ID but with spaces.
-  (Warning: Not yet implemented!)
 
 ### Backend view via "admin/options-page.php"
 
