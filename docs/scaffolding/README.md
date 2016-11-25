@@ -13,7 +13,7 @@ So please contribute :)
 
 Everything that is created using `wp-make`
 aims to follow the WordPress Coding Standards.
-You might like complain about some decisions in wording,
+You might like to complain about some decisions in wording,
 naming,
 or structure.
 Feel free to leave an issue so that we can discuss this.
