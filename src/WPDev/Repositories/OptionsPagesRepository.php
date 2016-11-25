@@ -47,7 +47,11 @@ class OptionsPagesRepository
             ]
         );
 
-        var_dump($content);
+        if (!is_dir(dirname($targetPath))) {
+            mkdir(dirname($targetPath), 0775, true);
+        }
+
+        file_put_contents($targetPath, $content);
     }
 
     public function getTemplatePath($templateFile)
