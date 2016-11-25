@@ -50,10 +50,14 @@ when this command is run:
 
 
 
-### Backend view via "admin/options-page.php"
+### Backend view
 
-When clicking on "Settings" > "My config" (label: can be chosen by you via command)
-you'll see the settings page for the added options group.
+The command above will create the
+"admin/options-pages/my-config.php" file
+which is responsible for displaying the options form.
+You find it by clicking on
+"Settings" > "My config"
+(the *label* can be configured).
 
 Note: This menu entry can be removed
 by deleting the generated lines in the "includes/options-pages.php"
@@ -65,7 +69,14 @@ and will print a form for all sections in the created options group.
 
 ### Functionality via options class
 
+Besides the view a kind of controller will be generated in 
+"includes/admin/options-pages/class-my-config.php".
+It is accessible via `$this` within the view (see above)
+or you load the class
+`\My_Plugin\Admin\Options_Pages\My_Config` in some other way.
+
 ### Registering the options page
+
 
 
 [1]: https://codex.wordpress.org/Creating_Options_Pages
